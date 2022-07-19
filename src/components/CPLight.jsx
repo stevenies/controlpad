@@ -23,7 +23,7 @@ export function CPLight(props) {
 		"#ffd700",	// YELLOW (value: 1)
 		"#ff8080"	// RED (value: 2)
 	];
-	const defaultStyle = { "display": "inline-block", "width": "20px", "height": "20px", "margin": "2px" };
+	const defaultStyle = { display: "inline-block", width: "20px", height: "20px", margin: "2px" };
 
 	const getStyle = (value) => {
 		const colors = props.colors ? props.colors : defaultColors;

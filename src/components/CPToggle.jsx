@@ -16,10 +16,10 @@ export function CPToggle(props) {
 	const { state, dispatch } = useContext(AppContext);
 	const value = state.controls[props.id].value;
 	
-	const styleItem = { "display": "inline-block", "width": "fit-content" };
-	const styleLabelLeft = props.labelLeft ? {} : { "display": "none" };
-	const styleToggle = { "width": "40px" };
-	const styleLabelRight = props.labelRight ? { "margin-left": "0px" } : { "display": "none" };
+	const styleItem = { display: "inline-block", width: "fit-content" };
+	const styleLabelLeft = props.labelLeft ? {} : { display: "none" };
+	const styleToggle = { width: "40px" };
+	const styleLabelRight = props.labelRight ? { marginLeft: "0px" } : { display: "none" };
 
 	// Create a callback function that dispatches a command indicating the toggle was clicked.
 	const clickHandler = (checked) => {
@@ -29,7 +29,7 @@ export function CPToggle(props) {
 	return (
 		<IonItem lines="none" style={styleItem}>
 			<IonLabel style={styleLabelLeft}>{props.labelLeft}</IonLabel>
-			<IonToggle checked={value == 1} onIonChange={e => clickHandler(e.detail.checked)} style={styleToggle} />
+			<IonToggle checked={value === 1} onIonChange={e => clickHandler(e.detail.checked)} style={styleToggle} />
 			<IonLabel slot="end" style={styleLabelRight}>{props.labelRight}</IonLabel>
 		</IonItem>
     );

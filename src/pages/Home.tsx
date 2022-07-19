@@ -19,7 +19,7 @@ export function Home() {
 	useEffect(() => {
 		connectServer('192.168.7.10', dispatch);
 		return disconnectServer;
-	}, []);
+	}, [dispatch]);
 	
 	return (
 		<IonPage>

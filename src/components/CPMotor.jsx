@@ -16,7 +16,7 @@ import { AppContext} from '../State.jsx';
 export function CPMotor(props) {
 
 	const showMotorStatus = props.showMotorStatus;
-	const rangeMinValue = props.unidirectional == "true" ? 0 : -127;
+	const rangeMinValue = props.unidirectional === "true" ? 0 : -127;
 	const rangeMaxValue = 127;
 
 	const { state, dispatch } = useContext(AppContext);
@@ -35,7 +35,7 @@ export function CPMotor(props) {
 	};
 	const styledIonRangeGreen = { ...styledIonRangeDefault, "--bar-background": "#adebad", "--bar-background-active": "#adebad" };
 	const styledIonRangeRed = { ...styledIonRangeDefault, "--bar-background": "#ff8080", "--bar-background-active": "#ff8080" };
-	const ionRangeStyle = showMotorStatus ? speed == 0 ? styledIonRangeGreen : styledIonRangeRed : styledIonRangeDefault;
+	const ionRangeStyle = showMotorStatus ? speed === 0 ? styledIonRangeGreen : styledIonRangeRed : styledIonRangeDefault;
 
 	// Create a callback function that dispatches a command to update the motor's speed.
 	const setMotorSpeed = (speed) => {

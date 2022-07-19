@@ -14,14 +14,14 @@ import { AppContext} from '../State.jsx';
 */
 export function CPTextField(props) {
 
-	const multiline = props.multiline == "true";
+	const multiline = props.multiline === "true";
 	const rows = props.rows ? props.rows : 1;
-	const editable = props.editable == "true";
+	const editable = props.editable === "true";
 
 	const { state, dispatch } = useContext(AppContext);
 	const value = state.controls[props.id].value;
 	
-	const labelStyle = { "padding-right": "8px" };
+	const labelStyle = { paddingRight: "8px" };
 	const displayStyle = { };
 	const editableStyle = { border: "1px solid black" };
 
